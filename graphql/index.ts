@@ -1,3 +1,18 @@
+export const createProjectMutation = `
+    mutation CreateProject($input: ProjectCreateInput!) {
+        projectCreate(input: $input) {
+            project {
+                id
+                title
+                description
+                createdBy {
+                    email
+                    name
+                }
+            }
+        }
+    }`;
+
 export const getUserQuery = `
     query GetUser($email: String!) {
         user(by: {email: $email}) {
